@@ -7,7 +7,7 @@ class ProductsRepository:
     def find_product_by_name(self, product_name: str) -> tuple:
         cursor = self.__conn.cursor()
         cursor.execute(
-            "SELECT * FROM product WHERE name = ?",
+            "SELECT * FROM products WHERE name = ?",
             (product_name,)
         )
         product = cursor.fetchone()
