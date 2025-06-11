@@ -21,7 +21,7 @@ class ProductCreator:
         self.__insert_product_in_sql(name, price, quantity)
         self.__insert_in_cache(name, price, quantity)
 
-        return self.__format_response
+        return self.__format_response()
 
     def __insert_product_in_sql(self, name: str, price: float, quantity: int) -> None:
         self.__products_repo.insert_product(name, price, quantity)
